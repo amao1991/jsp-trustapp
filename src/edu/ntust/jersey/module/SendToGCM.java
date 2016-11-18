@@ -43,7 +43,7 @@ public class SendToGCM {
 				String RegID = rs.getString(1);
 				list.put("RegID", RegID);
 				
-				String apiKey = "AIzaSyBUdKmBr6mH6Nniv2Ng692ZbW1dh0AxlKk";
+				String apiKey = "AIza................";
 				
 				//開始建立傳送資料及傳送給GCM Server
 				//建立Post連線設置

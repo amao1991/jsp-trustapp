@@ -40,7 +40,6 @@ public class Count {
 			while (rs.next()) {
 				JSONObject data = new JSONObject();
 
-				
 				if (Integer.parseInt(Global.count_or_not) == 0) {
 					data.put("count", -1);
 				}
@@ -58,7 +57,6 @@ public class Count {
 						System.out.println(counter);			
 						conn = MySQL.getInstance().getConnection();
 						stmt = conn.createStatement();
-						//UPDATE `purchase` SET `count`= 2 WHERE `username` = "Alice"
 						stmt.executeUpdate("UPDATE purchase SET count = '" + counter + "' WHERE username = '" + username.toString() + "';");
 					}
 				}
