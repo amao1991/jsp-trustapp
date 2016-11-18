@@ -3,6 +3,15 @@
 * [Introduction](#introduction)
 * [Module](#Module)
 	* [Authentication](#Authentication)
+	* [Count](#Count)
+	* [Count_Time](#Count_Time)
+	* [GetTestRegID](#GetTestRegID)
+	* [Identification](#Identification)
+	* [Identification_or_not](#Identification_or_not)
+	* [ReceiveFromClient](#ReceiveFromClient)
+	* [RequestList](#RequestList)
+	* [SendToGCM](#SendToGCM)
+	* [Time](#Time)
 
 <h2 id = "introduction">Introduction</h2>
 
@@ -16,23 +25,23 @@ App 應用服務可移轉性驗證
 
 用 `username` 和 `password` 做登入驗證。
 
-**Count**
+<h3 id = "Count">Count</h3>
 
 次數判別，
 
 用 `username` 和 `app_id` 去資料庫取得使用者擁有的此 App 還剩多少下載次數。
 
-**Count_Time**
+<h3 id = "Count_Time">Count_Time</h3>
 
 時間及次數判別，
 
 用 `username` 和 `app_id` 去資料庫同時判別是否還有下載次數、是否在合法下載的時間區間內。
 
-**GetTestRegID**
+<h3 id = "GetTestRegID">GetTestRegID</h3>
 
 用硬體獨有的 `mac_address` 去取得註冊時對應的 registration ID。
 
-**Identification**
+<h3 id = "Identification">Identification</h3>
 
 硬體辨識，
 
@@ -40,5 +49,5 @@ App 應用服務可移轉性驗證
 
 `identification` 由 Mac Address, UUID, **還有一個我忘了**，合在一起做 SHA1 而成。
 
-**Identification_or_not**
+<h3 id = "Identification_or_not">Identification_or_not</h3>
 
