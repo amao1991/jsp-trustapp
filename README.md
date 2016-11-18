@@ -2,6 +2,7 @@
 
 * [Introduction](#introduction)
 * [Module](#Module)
+	* [Authentication](#Authentication)
 
 <h2 id = "introduction">Introduction</h2>
 
@@ -11,7 +12,7 @@ App 應用服務可移轉性驗證
 
 <h2 id = "Module">Module</h2>
 
-**Authentication**
+<h4 id = "Authentication">Authentication</h4>
 
 用 `username` 和 `password` 做登入驗證。
 
