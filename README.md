@@ -51,3 +51,60 @@ App 應用服務可移轉性驗證
 
 <h3 id = "Identification_or_not">Identification_or_not</h3>
 
+由開發者決定此次辨識限定於哪個時間區間內、是否要進行次數判別。
+
+<h3 id = "ReceiveFromClient">ReceiveFromClient</h3>
+
+註冊 [GCM](https://developers.google.com/cloud-messaging/) 時，將 `Token` 及對應的 `mac_address` 寫入資料庫。
+
+<h3 id = "RequestList">RequestList</h3>
+
+傳送 `username` 及對應的 `mac_address` 以回傳給前端，讓使用者選擇可移轉的對象。
+
+<h3 id = "SendToGCM">SendToGCM</h3>
+
+Android Server 端透過 HTTP 推播訊息給 GCM
+
+參考 [Google Cloud Messaging (GCM) HTTP Connection Server](https://developers.google.com/cloud-messaging/http#auth)
+
+步驟：
+
+1. 註冊 google 帳號
+
+2. 開啟 GCM 服務
+
+3. 生成一個 Android API Key
+
+4. 跟接收者要 Registration ID
+
+[POST request](https://gcm-http.googleapis.com/gcm/send)
+
+HTTP header 規定內容：
+
+```
+httpPost.addHeader("Authorization", "key=" + apiKey);
+httpPost.addHeader("Content-Type", "application/json");
+```
+
+將訊息包成 JSON 格式送出，並且要完全符合以下格式
+
+```
+{
+    "to" : "Registration_ID",
+    "data" : {
+        "data_name_1" : "...",
+        "data_name_2" : "...",
+        ...
+    },
+}
+```
+
+<h3 id = "Time">Time</h3>
+
+三種時間區間判別
+
+1. 時間前：在某個特定日期以前下載，即合法。
+
+2. 時間後：在某個特定日期之後下載，即合法。
+
+3. 時間區間：在某兩個日期的區間內下載，即合法。
