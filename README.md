@@ -47,7 +47,7 @@ App 應用服務可移轉性驗證
 
 用 `username` 和 `identification` 去資料庫進行比對，
 
-`identification` 由 Mac Address, UUID, **還有一個我忘了**，合在一起做 SHA1 而成。
+`identification` 由 Mac Address, Android ID, IMEI，合在一起做 SHA1 而成。
 
 <h3 id = "Identification_or_not">Identification_or_not</h3>
 
